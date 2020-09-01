@@ -127,7 +127,7 @@ class PrivateUserApiTests(TestCase):
             'email': self.user.email,
             'name': self.user.name
         })
-        
+
     def test_post_me_not_allowed(self):
         res = self.client.post(ME_URL, {})
 
@@ -142,4 +142,3 @@ class PrivateUserApiTests(TestCase):
         self.assertEqual(self.user.name, payload['name'])
         self.assertTrue(self.user.check_password(payload['password']))
         self.assertEqual(res.status_code, status.HTTP_200_OK)
-
