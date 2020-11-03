@@ -10,7 +10,7 @@ install:
 
 
 script: 
-    coverage run --source=./app/ manage.py test && flake8 && coverage report
+    coverage run app/manage.py test && flake8 && coverage report
 
 after_success:
     - coveralls
